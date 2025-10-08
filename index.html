@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Early Access Request Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f5f7;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin: 20px;
+        }
+        .form-header { text-align: center; margin-bottom: 30px; }
+        .form-header h1 { font-size: 1.8rem; margin-bottom: 10px; color: #2d3748; }
+        #access-form label { display: block; font-weight: 500; margin-bottom: 8px; color: #4a5568; }
+        #access-form input, #access-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        #access-form input:focus, #access-form textarea:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.2);
+        }
+        #access-form button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            background-color: #2d3748;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        #access-form button:hover { background-color: #1a202c; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h1>Please submit this form to access the latest version.</h1>
+        </div>
+        <form id="access-form" action="https://formspree.io/f/mzzjajrd" method="POST">
+            <div>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Your Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="reason">Why do you want early access?</label>
+                <textarea id="reason" name="reason" rows="5" required></textarea>
+            </div>
+            
+            <!--
+            ============== IMPORTANT FIX ==============
+            The value below MUST be the full, public URL of your thank you page.
+            This tells Formspree exactly where to send the user after a successful submission.
+            ===========================================
+            -->
+            <input type="hidden" name="_next" value="https://two-legends-pr-os.vercel.app/thankyou.html">
+            
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+</body>
+</html>
